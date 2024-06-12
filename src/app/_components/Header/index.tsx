@@ -8,7 +8,7 @@ export default function Header() {
       <Link href="/">
         <Image src={logo} alt="logo" quality={100} unoptimized />
       </Link>
-      <div className="sm:ml-auto gap-4 flex flex-row text-white text-sm sm:text-base md:text-lg">
+      <div className="sm:ml-auto gap-4 flex flex-row text-white text-sm sm:text-base md:text-lg font-thin">
         <Link className="hover:text-cheese cursor-pointer" href="/watch">
           Watch Videos
         </Link>
