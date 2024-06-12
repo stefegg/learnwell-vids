@@ -1,13 +1,9 @@
-"use client";
-import VideoList from "./_components/VideoList";
-import { Suspense } from "react";
-import { Loader } from "./_components";
+import One from "./_components/Landing/one";
+
 export default function Home() {
   return (
-    <main className="">
-      <Suspense fallback={<Loader />}>
-        <VideoList />
-      </Suspense>
-    </main>
+    <div className="h-full">
+      <One />
+    </div>
   );
 }
