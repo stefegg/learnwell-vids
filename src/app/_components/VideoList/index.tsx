@@ -1,4 +1,5 @@
-import { getVideos } from "../../_utils";
+"use client";
+import { getVideos } from "../../_api";
 import InnerVideoList from "./list";
 import { useEffect, useState } from "react";
 

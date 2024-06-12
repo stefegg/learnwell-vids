@@ -1,3 +1,4 @@
+"use client";
 import { ColorRing } from "react-loader-spinner";
 
 export default function Loader() {
