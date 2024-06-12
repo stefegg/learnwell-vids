@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <div className="h-36 sm:h-24 bg-greenDark bg-clip-padding backdrop-filter backdrop-blur-2xl bg-opacity-80 sm:px-4 flex flex-col sm:flex-row w-full items-center justify-evenly fixed">
+    <div className="h-36 sm:h-24 bg-greenDark bg-clip-padding backdrop-filter backdrop-blur-2xl bg-opacity-80 sm:px-4 flex flex-col sm:flex-row w-full items-center justify-evenly fixed z-10">
       <Link href="/">
         <Image src={logo} alt="logo" quality={100} unoptimized />
       </Link>

@@ -10,7 +10,7 @@ const config: Config = {
     extend: {
       colors: {
         cheese: "#ffbf46",
-        tangerine: "#ff844d",
+        tangerine: "#fe8949",
         elecBlue: "#50c7e5",
         greenLight: "#49c19d",
         greenDark: "#3b9393",

@@ -5,57 +5,60 @@ import learnwellLogo from "../../../../public/static/logos/logo_dark.png";
 import stars from "../../../../public/static/images/stars.jpeg";
 
 import { useRef, useEffect } from "react";
-import { animate, stagger } from "motion";
+import { animate, stagger, inView } from "motion";
 import { blackHan } from "@/app/fonts";
 
 export default function One() {
   useEffect(() => {
-    if (!astroRef.current) return;
-    animate(
-      astroRef.current,
-      { opacity: 1 },
-      {
-        duration: 2,
-        delay: stagger(0.2),
-      }
-    );
-    animate(
-      astroRef.current,
-      {
-        transform: [
-          "translate(0px, -15px)",
-          "translate(-15px, 0px)",
-          "transslate(15px, -15px)",
+    if (!sectionOneRef.current) return;
+    inView(sectionOneRef.current, () => {
+      if (!astroRef.current) return;
+      animate(
+        astroRef.current,
+        { opacity: 1 },
+        {
+          duration: 2,
+          delay: stagger(0.2),
+        }
+      );
+      animate(
+        astroRef.current,
+        {
+          transform: [
+            "translate(0px, -15px)",
+            "translate(-15px, 0px)",
+            "transslate(15px, -15px)",
+          ],
+        },
+        { offset: [0, 0.5, 1], repeat: Infinity, duration: 8 }
+      );
+      if (!logoRef.current) return;
+      animate(
+        logoRef.current,
+        { transform: "none" },
+        { duration: 2, delay: stagger(0.2) }
+      );
+      if (
+        !welcomeRef.current ||
+        !worldRef.current ||
+        !readyRef.current ||
+        !experienceRef.current
+      )
+        return;
+      animate(
+        [
+          welcomeRef.current,
+          worldRef.current,
+          readyRef.current,
+          experienceRef.current,
         ],
-      },
-      { offset: [0, 0.5, 1], repeat: Infinity, duration: 8 }
-    );
-    if (!logoRef.current) return;
-    animate(
-      logoRef.current,
-      { transform: "none" },
-      { duration: 2, delay: stagger(0.2) }
-    );
-    if (
-      !welcomeRef.current ||
-      !worldRef.current ||
-      !readyRef.current ||
-      !experienceRef.current
-    )
-      return;
-    animate(
-      [
-        welcomeRef.current,
-        worldRef.current,
-        readyRef.current,
-        experienceRef.current,
-      ],
-      {
-        opacity: 1,
-        transform: "none",
-      },
-      { duration: 2, delay: stagger(0.2) }
-    );
+        {
+          opacity: 1,
+          transform: "none",
+        },
+        { duration: 2, delay: stagger(0.2) }
+      );
+    });
   }, []);
 
   const astroRef = useRef<HTMLImageElement>(null);
@@ -64,13 +67,16 @@ export default function One() {
   const readyRef = useRef<HTMLSpanElement>(null);
   const worldRef = useRef<HTMLSpanElement>(null);
   const experienceRef = useRef<HTMLSpanElement>(null);
-
+  const sectionOneRef = useRef<HTMLSpanElement>(null);
   return (
-    <section className="h-[calc(100vh-6rem)] p-4 px-8 w-full bg-greenFog overflow-hidden text-textDark">
+    <section
+      className="h-[calc(100vh-6rem)] p-4 px-8 w-full bg-greenFog overflow-hidden text-textDark"
+      ref={sectionOneRef}
+    >
       <div className="bg-elecBlue w-full h-full rounded-lg flex flex-row overflow-hidden">
         <div className="w-1/2 p-4">
           <div
-            className="w-full bg-black h-full border-4 border-cheese rounded-lg"
+            className="w-full bg-black h-full border-4 border-cheese rounded-lg relative z-1"
             style={{
               backgroundImage: `url(${stars.src})`,
             }}
