@@ -15,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={openSans.className}>
+      <body className={`${openSans.className} bg-greenFog`}>
         <div className="h-24">
           <Header />
         </div>

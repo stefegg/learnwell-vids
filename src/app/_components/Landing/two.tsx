@@ -10,11 +10,10 @@ export default function Two() {
   const rexRef = useRef<HTMLImageElement>(null);
   const roarRef = useRef<HTMLHeadingElement>(null);
   const extinctRef = useRef<HTMLHeadingElement>(null);
-  const sectionTwoRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
-    if (!sectionTwoRef.current) return;
-    inView(sectionTwoRef.current, () => {
+    if (!roarRef.current) return;
+    inView(roarRef.current, () => {
       if (!rexRef.current) return;
       animate(
         rexRef.current,
@@ -72,7 +71,6 @@ export default function Two() {
   return (
     <section
       className="h-[calc(100vh-6rem)] p-4 px-8 w-full bg-greenFog overflow-hidden text-textDark "
-      ref={sectionTwoRef}
       style={{
         textShadow: `2px 2px 0px #FF0000, 5px 4px 0px rgba(0,0,0,0.06)`,
       }}

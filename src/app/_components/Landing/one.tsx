@@ -91,7 +91,7 @@ export default function One() {
         </div>
         <div className="w-1/2 flex flex-col py-4 gap-2 overflow-hidden">
           <h2
-            className="text-5xl  pl-4 opacity-0 translate-x-20 rotate-x-90 transition-all"
+            className="text-5xl pl-4 opacity-0 translate-x-20 rotate-x-90 transition-all"
             ref={welcomeRef}
           >
             Welcome to
