@@ -1,8 +1,7 @@
 "use client";
 import Image from "next/image";
-import astronaut from "../../../../public/static/images/astronaut.png";
+import { astronaut, stars } from "../../../../public/static/images";
 import learnwellLogo from "../../../../public/static/logos/logo_dark.png";
-import stars from "../../../../public/static/images/stars.jpeg";
 
 import { useRef, useEffect } from "react";
 import { animate, stagger, inView } from "motion";

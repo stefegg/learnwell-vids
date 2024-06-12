@@ -1,8 +1,7 @@
 "use client";
 import { useRef, useEffect } from "react";
 import Image from "next/image";
-import pharohMask from "../../../../public/static/images/pharoh.png";
-import hiero from "../../../../public/static/images/hiero.jpeg";
+import { pharoh, hiero } from "../../../../public/static/images";
 import { blackHan } from "@/app/fonts";
 import RisingText from "../RisingText";
 import logo from "../../../../public/static/logos/logo_color.png";
@@ -44,7 +43,7 @@ export default function SectionThree() {
             }}
           >
             <Image
-              src={pharohMask}
+              src={pharoh}
               alt="pharoh"
               ref={pharohRef}
               className={"opacity-0"}

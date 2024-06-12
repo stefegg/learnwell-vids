@@ -1,8 +1,7 @@
 "use client";
 import { useEffect, useRef } from "react";
 import Image from "next/image";
-import tRex from "../../../../public/static/images/trex.png";
-import jungle from "../../../../public/static/images/jungle.jpg";
+import { trex, jungle } from "../../../../public/static/images";
 import { blackHan } from "@/app/fonts";
 import { RisingText } from "../index";
 import { inView, animate, stagger } from "motion";
@@ -85,7 +84,7 @@ export default function SectionTwo() {
               backgroundSize: "cover",
             }}
           >
-            <Image src={tRex} alt="tRex" className={`opacity-1`} ref={rexRef} />
+            <Image src={trex} alt="trex" className={`opacity-1`} ref={rexRef} />
           </div>
         </div>
         <div className="w-1/2 flex flex-col items-center py-6 ">
