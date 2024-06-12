@@ -8,7 +8,7 @@ import RisingText from "../RisingText";
 import logo from "../../../../public/static/logos/logo_color.png";
 import { inView, animate, stagger } from "motion";
 
-export default function Three() {
+export default function SectionThree() {
   const sectionThreeRef = useRef<HTMLSpanElement>(null);
   const royalRef = useRef<HTMLHeadingElement>(null);
   const pharohRef = useRef<HTMLImageElement>(null);

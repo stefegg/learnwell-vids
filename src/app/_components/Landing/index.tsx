@@ -1,12 +1,13 @@
-import One from "./one";
-import Two from "./two";
-import Three from "./three";
+import SectionOne from "./SectionOne";
+import SectionTwo from "./SectionTwo";
+import SectionThree from "./SectionThree";
+
 export default function Landing() {
   return (
     <div className="min-h-screen flex flex-col overflow-y-auto">
-      <One />
-      <Two />
-      <Three />
+      <SectionOne />
+      <SectionTwo />
+      <SectionThree />
     </div>
   );
 }

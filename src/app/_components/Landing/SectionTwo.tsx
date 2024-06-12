@@ -6,7 +6,8 @@ import jungle from "../../../../public/static/images/jungle.jpg";
 import { blackHan } from "@/app/fonts";
 import { RisingText } from "../index";
 import { inView, animate, stagger } from "motion";
-export default function Two() {
+
+export default function SectionTwo() {
   const rexRef = useRef<HTMLImageElement>(null);
   const roarRef = useRef<HTMLHeadingElement>(null);
   const extinctRef = useRef<HTMLHeadingElement>(null);

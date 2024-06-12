@@ -8,7 +8,7 @@ import { useRef, useEffect } from "react";
 import { animate, stagger, inView } from "motion";
 import { blackHan } from "@/app/fonts";
 
-export default function One() {
+export default function SectionOne() {
   useEffect(() => {
     if (!sectionOneRef.current) return;
     inView(sectionOneRef.current, () => {
