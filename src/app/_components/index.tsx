@@ -6,6 +6,7 @@ import RisingText from "./RisingText";
 import Input from "./Input";
 import NewVideo from "./NewVideo";
 import Button from "./Button";
+import Searchbar from "./Searchbar";
 
 export {
   Loader,
@@ -16,4 +17,5 @@ export {
   Input,
   NewVideo,
   Button,
+  Searchbar,
 };
