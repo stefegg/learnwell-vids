@@ -22,7 +22,7 @@ export default async function VideoPlayer(props: VideoPlayerProps) {
     }
   };
   return (
-    <div className="h-full flex flex-col  w-1/2">
+    <div className="h-full flex flex-col w-1/2">
       <iframe
         src={fixUrl()}
         title={data.video.title}

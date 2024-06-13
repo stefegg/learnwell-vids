@@ -8,7 +8,7 @@ type Video = {
   id: string;
 };
 
-type Comment = {
+export type Comment = {
   created_at: Date;
   content: string;
   user_id: string;
@@ -32,6 +32,12 @@ type PostVideoProps = {
   title: string;
   description: string;
   videoUrl: string;
+};
+
+type PostCommentProps = {
+  video_id: string;
+  content: string;
+  user_id: string;
 };
 
 type ValidationError = {
@@ -71,7 +77,7 @@ export async function getVideo(id: string): Promise<VideoReturn> {
 
 // Call to get single video's comments by video Id
 
-export async function getVideoComments(id: string): Promise<CommentReturn[]> {
+export async function getVideoComments(id: string): Promise<CommentReturn> {
   try {
     const res = await fetch(
       `https://take-home-assessment-423502.uc.r.appspot.com/api/videos/comments?video_id=${id}`
@@ -94,6 +100,32 @@ export async function postVideo(props: PostVideoProps) {
           title,
           description,
           video_url: videoUrl,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+        method: "POST",
+      }
+    );
+    return response.status;
+  } catch (error) {
+    throw new Error(`${error}`);
+  }
+}
+
+// Call to post comment
+
+export async function postComment(props: PostCommentProps) {
+  const { video_id, content, user_id } = props;
+  try {
+    const response = await fetch(
+      `https://take-home-assessment-423502.uc.r.appspot.com/api/videos/comments
+`,
+      {
+        body: JSON.stringify({
+          video_id,
+          content,
+          user_id,
         }),
         headers: {
           "Content-Type": "application/json",
