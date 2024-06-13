@@ -5,26 +5,31 @@ export async function getVideos() {
   return res.json();
 }
 
-const data = {
-  user_id: "stephen_egbert",
-  title: "test",
-  description: "test_video",
-  video_url: "https://www.youtube.com/watch?v=wVSKMRhhaF0",
+type PostVideoProps = {
+  title: string;
+  description: string;
+  videoUrl: string;
 };
 
-export async function postVideo() {
+export async function postVideo(props: PostVideoProps) {
+  const { title, description, videoUrl } = props;
   try {
     const response = await fetch(
       `https://take-home-assessment-423502.uc.r.appspot.com/api/videos`,
       {
-        body: JSON.stringify(data),
+        body: JSON.stringify({
+          user_id: "stephen_egbert",
+          title,
+          description,
+          video_url: videoUrl,
+        }),
         headers: {
           "Content-Type": "application/json",
         },
         method: "POST",
       }
     );
-    console.log(JSON.stringify(response.body), "-------post");
+    return response.status;
   } catch (error) {
     console.log(error);
   }

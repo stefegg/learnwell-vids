@@ -2,10 +2,16 @@
 import { Input, Button } from "../index";
 import { useFormik } from "formik";
 import { newVideoSchema } from "./newVideoSchema";
+import { postVideo } from "@/app/_api";
 
 export default function NewVideo() {
-  const handleSubmit = () => {
-    console.log("submit");
+  const handleSubmit = async () => {
+    const resp = await postVideo({
+      title: formik.values.title,
+      description: formik.values.description,
+      videoUrl: formik.values.videoUrl,
+    });
+    console.log(resp, "----------");
   };
 
   const formik = useFormik({
