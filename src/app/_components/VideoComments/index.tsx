@@ -19,7 +19,7 @@ export default function VideoComments(props: VideoCommentProps) {
       setComments(data.comments);
     };
     fetchComments();
-  }, []);
+  });
 
   return (
     <div className="h-full w-full flex flex-col rounded-lg p-4 relative z-10 bg-elecBlue text-white">

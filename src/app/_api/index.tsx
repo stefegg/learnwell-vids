@@ -54,7 +54,7 @@ type ValidationError = {
 export async function getVideos(): Promise<VideosReturn> {
   try {
     const res = await fetch(
-      `https://take-home-assessment-423502.uc.r.appspot.com/videos?user_id=stephen_egbert`
+      `https://take-home-assessment-423502.uc.r.appspot.com/videos?user_id=${process.env.USER_ID}`
     );
 
     return res.json();
