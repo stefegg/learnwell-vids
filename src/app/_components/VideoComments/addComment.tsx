@@ -2,7 +2,7 @@
 import { Input, Button } from "../index";
 import { useFormik } from "formik";
 import { newCommentSchema } from "./newCommentSchema";
-import { useState, Dispatch, SetStateAction } from "react";
+import { useState, Dispatch, SetStateAction, RefObject } from "react";
 import { postComment } from "@/app/_api";
 import { Comment } from "@/app/_api";
 
@@ -10,10 +10,11 @@ type AddCommentProps = {
   id: string;
   comments: Comment[];
   setComments: Dispatch<SetStateAction<Comment[]>>;
+  bottomRef: RefObject<HTMLDivElement>;
 };
 
 export default function AddComment(props: AddCommentProps) {
-  const { id, comments, setComments } = props;
+  const { id, comments, setComments, bottomRef } = props;
   const [showAdd, setShowAdd] = useState<boolean>(false);
 
   const getTranslate = () => {
@@ -28,8 +29,18 @@ export default function AddComment(props: AddCommentProps) {
       content: formik.values.comment,
       user_id: formik.values.userName,
     });
-    setComments([...comments]);
+    setComments([
+      ...comments,
+      {
+        created_at: new Date(),
+        content: formik.values.comment,
+        user_id: formik.values.userName,
+        video_id: id,
+        id: id,
+      },
+    ]);
     setShowAdd(false);
+    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
     formik.setFieldValue("comment", "");
     formik.setFieldTouched("comment", false);
   };
