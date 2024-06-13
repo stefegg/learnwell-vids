@@ -31,7 +31,7 @@ export default function SectionThree() {
 
   return (
     <section
-      className="h-[calc(100vh-6rem)] p-4 px-8 w-full bg-greenFog overflow-hidden text-textDark"
+      className="h-[calc(100vh-6rem)] p-4 px-8 w-full  overflow-hidden text-textDark"
       ref={sectionThreeRef}
     >
       <div className="bg-cheese w-full h-full rounded-lg flex flex-row overflow-hidden">

@@ -8,23 +8,52 @@ type Video = {
   id: string;
 };
 
-type VideoReturn = {
+type VideosReturn = {
   videos: Video[] | [];
 };
 
-export async function getVideos(): Promise<VideoReturn> {
-  const res = await fetch(
-    `https://take-home-assessment-423502.uc.r.appspot.com/videos?user_id=stephen_egbert`
-  );
-
-  return res.json();
-}
+type VideoReturn = {
+  video: Video;
+};
 
 type PostVideoProps = {
   title: string;
   description: string;
   videoUrl: string;
 };
+
+type ValidationError = {
+  detail: [
+    {
+      loc: [string, 0];
+      msg: string;
+      type: string;
+    }
+  ];
+};
+
+export async function getVideos(): Promise<VideosReturn> {
+  try {
+    const res = await fetch(
+      `https://take-home-assessment-423502.uc.r.appspot.com/videos?user_id=stephen_egbert`
+    );
+
+    return res.json();
+  } catch (error) {
+    throw new Error(`${error}`);
+  }
+}
+
+export async function getVideo(id: string): Promise<VideoReturn> {
+  try {
+    const res = await fetch(
+      `https://take-home-assessment-423502.uc.r.appspot.com/api/videos/single?video_id=${id}`
+    );
+    return res.json();
+  } catch (error) {
+    throw new Error(`${error}`);
+  }
+}
 
 export async function postVideo(props: PostVideoProps) {
   const { title, description, videoUrl } = props;
@@ -46,6 +75,6 @@ export async function postVideo(props: PostVideoProps) {
     );
     return response.status;
   } catch (error) {
-    console.log(error);
+    throw new Error(`${error}`);
   }
 }

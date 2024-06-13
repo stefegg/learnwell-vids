@@ -70,7 +70,7 @@ export default function SectionTwo() {
   }, []);
   return (
     <section
-      className="h-[calc(100vh-6rem)] p-4 px-8 w-full bg-greenFog overflow-hidden text-textDark "
+      className="h-[calc(100vh-6rem)] p-4 px-8 w-full overflow-hidden text-textDark "
       style={{
         textShadow: `2px 2px 0px #FF0000, 5px 4px 0px rgba(0,0,0,0.06)`,
       }}
