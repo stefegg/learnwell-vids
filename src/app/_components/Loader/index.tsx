@@ -1,6 +1,6 @@
 "use client";
 import { ColorRing } from "react-loader-spinner";
-
+// Multi purpose loader
 export default function Loader() {
   return (
     <div className="h-full w-full flex flex-col items-center justify-center">

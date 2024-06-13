@@ -5,7 +5,7 @@ import { format } from "date-fns";
 type VideoListProps = {
   query: string;
 };
-
+// Displays all videos
 export default async function VideoList(props: VideoListProps) {
   const { query } = props;
 

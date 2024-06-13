@@ -5,7 +5,7 @@ import { inView, animate, stagger } from "motion";
 type ListHeaderProps = {
   text: string;
 };
-
+// Header for video list
 export default function ListHeader(props: ListHeaderProps) {
   const { text } = props;
   const headerRef = useRef<HTMLHeadingElement>(null);

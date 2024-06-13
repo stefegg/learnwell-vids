@@ -3,7 +3,7 @@ import { ChangeEvent } from "react";
 type InputProps = {
   label?: string;
   error?: string | false;
-  width: string;
+  width?: string;
   onChange: (e: string | ChangeEvent<any>) => void;
   onBlur?: (e: any) => void;
   value: string;
