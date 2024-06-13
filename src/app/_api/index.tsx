@@ -40,16 +40,6 @@ type PostCommentProps = {
   user_id: string;
 };
 
-type ValidationError = {
-  detail: [
-    {
-      loc: [string, 0];
-      msg: string;
-      type: string;
-    }
-  ];
-};
-
 // Call to get all videos
 export async function getVideos(): Promise<VideosReturn> {
   try {
@@ -59,7 +49,7 @@ export async function getVideos(): Promise<VideosReturn> {
 
     return res.json();
   } catch (error) {
-    throw new Error(`${error}`);
+    throw new Error(`Error getting all videos ${error}`);
   }
 }
 
@@ -71,12 +61,11 @@ export async function getVideo(id: string): Promise<VideoReturn> {
     );
     return res.json();
   } catch (error) {
-    throw new Error(`${error}`);
+    throw new Error(`Error fetching video by Id ${error}`);
   }
 }
 
 // Call to get single video's comments by video Id
-
 export async function getVideoComments(id: string): Promise<CommentReturn> {
   try {
     const res = await fetch(
@@ -84,7 +73,7 @@ export async function getVideoComments(id: string): Promise<CommentReturn> {
     );
     return res.json();
   } catch (error) {
-    throw new Error(`${error}`);
+    throw new Error(`Error getting video comments ${error}`);
   }
 }
 
@@ -109,7 +98,7 @@ export async function postVideo(props: PostVideoProps) {
     );
     return response.status;
   } catch (error) {
-    throw new Error(`${error}`);
+    throw new Error(`Error posting video ${error}`);
   }
 }
 
@@ -135,6 +124,6 @@ export async function postComment(props: PostCommentProps) {
     );
     return response.status;
   } catch (error) {
-    throw new Error(`${error}`);
+    throw new Error(`Error posting comment ${error}`);
   }
 }

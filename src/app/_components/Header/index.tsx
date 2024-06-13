@@ -1,7 +1,7 @@
 import logo from "../../../../public/static/logos/logo_light.png";
 import Image from "next/image";
 import Link from "next/link";
-
+// Site Header
 export default function Header() {
   return (
     <div className="h-36 sm:h-24 bg-greenDark bg-clip-padding backdrop-filter backdrop-blur-2xl bg-opacity-40 sm:px-4 flex flex-col sm:flex-row w-full items-center justify-evenly fixed z-10">

@@ -7,7 +7,7 @@ import { SetStateAction, Dispatch } from "react";
 type NewVideoFormProps = {
   setSubmitted: Dispatch<SetStateAction<string | null>>;
 };
-
+// Form for submitting new videos
 export default function NewVideoForm(props: NewVideoFormProps) {
   const { setSubmitted } = props;
   const handleSubmit = async () => {

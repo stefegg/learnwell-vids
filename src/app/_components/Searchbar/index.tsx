@@ -3,6 +3,7 @@ import { useSearchParams, usePathname, useRouter } from "next/navigation";
 import { useDebouncedCallback } from "use-debounce";
 import { useState } from "react";
 
+//filter bar
 export default function SearchBar(props: { placeholder: string }) {
   const { placeholder } = props;
   const [isTyping, setIsTyping] = useState(false);

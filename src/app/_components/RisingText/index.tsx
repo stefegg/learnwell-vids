@@ -6,7 +6,7 @@ import { inView, animate, stagger } from "motion";
 type RisingTextProps = {
   text: string;
 };
-
+// Component that shows text that rises when scrolled to
 export default function RisingText(props: RisingTextProps) {
   const { text } = props;
   const risingText = useRef<HTMLDivElement>(null);

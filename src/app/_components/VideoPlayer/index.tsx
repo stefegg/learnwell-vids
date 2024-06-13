@@ -3,7 +3,7 @@ import { getVideo } from "@/app/_api";
 type VideoPlayerProps = {
   id: string;
 };
-
+// Video player works with youtube and vimeo videos
 export default async function VideoPlayer(props: VideoPlayerProps) {
   const { id } = props;
   const data = await getVideo(id);

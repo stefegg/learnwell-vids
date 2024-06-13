@@ -6,7 +6,7 @@ type SuccessFailProps = {
   submitStatus: string | null;
   setSubmitStatus: Dispatch<SetStateAction<string | null>>;
 };
-
+// Screen that shows if a video upload was successful or not
 export default function SuccessFail(props: SuccessFailProps) {
   const router = useRouter();
   const { submitStatus, setSubmitStatus } = props;

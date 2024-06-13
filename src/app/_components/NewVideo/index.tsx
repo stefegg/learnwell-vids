@@ -6,12 +6,6 @@ import SuccessFail from "./successfail";
 export default function NewVideo() {
   const [submitStatus, setSubmitStatus] = useState<string | null>(null);
 
-  const renderComponent = () => {
-    if (submitStatus === null)
-      return <NewVideoForm setSubmitted={setSubmitStatus} />;
-    else return;
-  };
-
   return (
     <div
       className={`w-1/2 bg-greenLight h-3/4 rounded-lg p-8 border-cheese border-4 flex flex-col items-center gap-6 text-white`}
