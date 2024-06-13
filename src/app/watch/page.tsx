@@ -1,4 +1,4 @@
-import { Searchbar, Loader, VideoList } from "../_components";
+import { Searchbar, Loader, VideoList, ListHeader } from "../_components";
 import { Suspense } from "react";
 
 type VideoListPageProps = {
@@ -13,9 +13,7 @@ export default async function VideoListPage(props: VideoListPageProps) {
   return (
     <section className="px-8 py-4 h-[calc(100vh-6rem)] flex flex-col gap-6">
       <span className="flex flex-row w-full items-center">
-        <h2 className={`text-white text-5xl uppercase font-thin`}>
-          Video list
-        </h2>
+        <ListHeader text="Video List" />
         <div className="ml-auto w-1/3">
           <Searchbar placeholder="Search Videos" />
         </div>

@@ -26,7 +26,7 @@ export default function SectionOne() {
           transform: [
             "translate(0px, -15px)",
             "translate(-15px, 0px)",
-            "translate(15px, -15px)",
+            "translate(0px, -15px)",
           ],
         },
         { offset: [0, 0.5, 1], repeat: Infinity, duration: 8 }
@@ -69,7 +69,7 @@ export default function SectionOne() {
   const sectionOneRef = useRef<HTMLSpanElement>(null);
   return (
     <section
-      className="h-[calc(100vh-6rem)] p-4 px-8 w-full bg-greenFog overflow-hidden text-textDark"
+      className="h-[calc(100vh-6rem)] p-4 px-8 w-full  overflow-hidden text-textDark"
       ref={sectionOneRef}
     >
       <div className="bg-elecBlue w-full h-full rounded-lg flex flex-row overflow-hidden">
