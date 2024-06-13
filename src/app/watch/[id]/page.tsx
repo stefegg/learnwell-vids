@@ -1,4 +1,4 @@
-import { VideoPlayer, Loader } from "@/app/_components";
+import { VideoPlayer, Loader, VideoComments } from "@/app/_components";
 import { Suspense } from "react";
 
 type WatchPageProps = {
@@ -10,9 +10,12 @@ export default function WatchPage(props: WatchPageProps) {
     params: { id },
   } = props;
   return (
-    <section className="h-[calc(100vh-6rem)] py-2 px-4">
+    <section className="h-[calc(100vh-6rem)] p-4 w-full bg-red-500 flex flex-row gap-4">
       <Suspense fallback={<Loader />}>
         <VideoPlayer id={id} />
+      </Suspense>
+      <Suspense fallback={<Loader />}>
+        <VideoComments id={id} />
       </Suspense>
     </section>
   );

@@ -9,6 +9,7 @@ import Button from "./Button";
 import Searchbar from "./Searchbar";
 import VideoPlayer from "./VideoPlayer";
 import ListHeader from "./ListHeader";
+import VideoComments from "./VideoComments";
 
 export {
   Loader,
@@ -22,4 +23,5 @@ export {
   Searchbar,
   VideoPlayer,
   ListHeader,
+  VideoComments,
 };
