@@ -1,20 +1,26 @@
-"use client";
 import { getVideos } from "../../_api";
 import InnerVideoList from "./list";
 import { useEffect, useState } from "react";
 
-export default function VideoList() {
-  const [videos, setVideos] = useState([]);
-  useEffect(() => {
-    const fetchVideos = async () => {
-      const result = await getVideos();
-      setVideos(result);
-    };
-    fetchVideos();
-  }, []);
+type VideoListProps = {
+  query: string;
+};
+
+export default async function VideoList(props: VideoListProps) {
+  const { query } = props;
+  const data = await getVideos();
+  const filteredVideos = Array.isArray(data.videos)
+    ? data.videos.filter((video) => {
+        return video.title.toLowerCase().includes(query.toLowerCase());
+      })
+    : [];
   return (
-    <div>
-      <InnerVideoList videos={videos} />
+    <div
+      className={`border-2 border-cheese rounded-lg flex flex-row grow overflow-y-auto`}
+    >
+      {filteredVideos.map((v, idx) => {
+        return <div key={`${v.title}-${idx}`}>{v.title}</div>;
+      })}
     </div>
   );
 }

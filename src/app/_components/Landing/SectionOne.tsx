@@ -26,7 +26,7 @@ export default function SectionOne() {
           transform: [
             "translate(0px, -15px)",
             "translate(-15px, 0px)",
-            "transslate(15px, -15px)",
+            "translate(15px, -15px)",
           ],
         },
         { offset: [0, 0.5, 1], repeat: Infinity, duration: 8 }
