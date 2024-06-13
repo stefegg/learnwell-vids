@@ -17,15 +17,16 @@ export default async function VideoList(props: VideoListProps) {
     : [];
   return (
     <div
-      className={`border-4 border-cheese rounded-lg flex flex-row grow overflow-y-auto bg-elecBlue`}
+      className={`border-4 border-cheese rounded-lg flex flex-col grow overflow-y-auto bg-elecBlue text-white p-4`}
     >
-      <div className="grid grid-cols-3 gap-4 p-4 w-full overflow-y-auto">
+      <div className="text-lg mb-4">Click on any video to start learning!</div>
+      <div className="grid grid-cols-3 gap-4  w-full overflow-y-auto">
         {filteredVideos.map((v, idx) => {
           return (
             <Link
               key={`${v.title}-${idx}`}
               href={`/watch/${v.id}`}
-              className="border-red-500 border-4 w-full rounded-lg min-h-48 max-h-96 cursor-pointer flex flex-col text-white bg-greenLight p-2 items-center gap-2"
+              className="border-tangerine border-4 w-full rounded-lg min-h-48 max-h-96 cursor-pointer flex flex-col bg-greenLight p-2 items-center gap-2 justify-evenly hover:text-cheese hover:bg-greenDark"
             >
               <div className="text-xl">{v.title}</div>
               <div className="overflow-y-auto text-sm">{v.description}</div>
