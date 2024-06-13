@@ -1,7 +1,9 @@
+import { NewVideo } from "../_components";
+
 export default function NewVideoPage() {
   return (
-    <div>
-      <div>upload new videos</div>
+    <div className="h-[calc(100vh-6rem)] flex justify-center items-center w-full">
+      <NewVideo />
     </div>
   );
 }

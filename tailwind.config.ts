@@ -16,9 +16,16 @@ const config: Config = {
         greenDark: "#3b9393",
         greenFog: "#3c5f72",
         textDark: "#3a3a3a",
+        error: "#B00020",
       },
     },
   },
   plugins: [],
+  safelist: [
+    {
+      pattern: /(bg|text|border|border-b)-(error)/,
+      variants: ["before", "hover", "focus"],
+    },
+  ],
 };
 export default config;
