@@ -1,8 +1,11 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Getting Started Locally
 
-## Getting Started
+First, create a .env file in the project root.  You need to set USER_ID, you may use any value, or my name for some preloaded data.
+```bash
+USER_ID=stephen_egbert
+```
 
-First, run the development server:
+Second, run the development server:
 
 ```bash
 npm run dev
@@ -16,21 +19,11 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Building the Application to the Web
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+This project is currently deployed on Vercel at [https://learnwell-vids.vercel.app/(https://learnwell-vids.vercel.app/)].  
 
-## Learn More
+Any branch that is pushed to this repo will be deployed to a preview environment with a dynamic deployment address.  This deployment can be accessed by navigating through the project interface on Github, or on Vercel.
 
-To learn more about Next.js, take a look at the following resources:
+Any branch that is merged into the 'main' branch, will be deployed to Production.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
