@@ -1,5 +1,5 @@
 type Video = {
-  createdAt: Date;
+  created_at: Date;
   video_url: string;
   user_id: string;
   description: string;
