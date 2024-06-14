@@ -45,6 +45,10 @@ Next I moved onto the comments section, I built the slider for adding new commen
 
 All in all I'm proud of the work I put into the project, I think the landing page will get people excited to learn, and that the site is informative throughout on how to use it.  
 
+## Loom walkthrough
+
+[View here](https://www.loom.com/share/13d5481b64044b3a921f47951faff919)
+
 ## Screenshots
 
 <img width="1440" alt="Screenshot 2024-06-13 at 5 42 46 PM" src="https://github.com/stefegg/learnwell-vids/assets/38544233/8c17d3ab-3f4c-4922-8c38-7c5b91da5f4b">
