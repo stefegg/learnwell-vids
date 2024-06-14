@@ -1,6 +1,5 @@
 "use client";
 import { getVideoComments } from "@/app/_api";
-import AddComment from "./addComment";
 import { useEffect, useState, useRef } from "react";
 import { Comment } from "@/app/_api";
 import { format } from "date-fns";
