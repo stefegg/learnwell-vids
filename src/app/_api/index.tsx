@@ -44,7 +44,8 @@ type PostCommentProps = {
 export async function getVideos(): Promise<VideosReturn> {
   try {
     const res = await fetch(
-      `https://take-home-assessment-423502.uc.r.appspot.com/videos?user_id=${process.env.USER_ID}`
+      `https://take-home-assessment-423502.uc.r.appspot.com/videos?user_id=${process.env.NEXT_PUBLIC_USER_ID}`,
+      { cache: "no-store" }
     );
 
     return res.json();
@@ -85,7 +86,7 @@ export async function postVideo(props: PostVideoProps) {
       `https://take-home-assessment-423502.uc.r.appspot.com/api/videos`,
       {
         body: JSON.stringify({
-          user_id: "stephen_egbert",
+          user_id: process.env.NEXT_PUBLIC_USER_ID,
           title,
           description,
           video_url: videoUrl,
@@ -103,7 +104,6 @@ export async function postVideo(props: PostVideoProps) {
 }
 
 // Call to post comment
-
 export async function postComment(props: PostCommentProps) {
   const { video_id, content, user_id } = props;
   try {

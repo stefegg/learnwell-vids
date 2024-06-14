@@ -1,5 +1,5 @@
 "use client";
-import { getVideoComments } from "@/app/_api";
+import { getVideoComments, postComment } from "@/app/_api";
 import { useEffect, useState, useRef } from "react";
 import { Comment } from "@/app/_api";
 import { format } from "date-fns";
@@ -20,15 +20,15 @@ export default function VideoComments(props: VideoCommentProps) {
       const data = await getVideoComments(id);
       setComments(data.comments);
     };
-    // fetchComments();
+    fetchComments();
   });
 
   const handleSubmit = async () => {
-    // const resp = await postComment({
-    //   video_id: id,
-    //   content: formik.values.comment,
-    //   user_id: formik.values.userName,
-    // });
+    const resp = await postComment({
+      video_id: id,
+      content: formik.values.comment,
+      user_id: formik.values.userName,
+    });
     setComments([
       {
         created_at: new Date(),
