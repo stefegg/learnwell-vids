@@ -1,8 +1,8 @@
 ## Getting Started Locally
 
-First, create a .env file in the project root.  You need to set USER_ID, you may use any value, or my name for some preloaded data.
+First, create a .env file in the project root.  You need to set NEXT_PUBLIC_USER_ID, you may use any value, or my name for some preloaded data.
 ```bash
-USER_ID=stephen_egbert
+NEXT_PUBLIC_USER_ID=stephen_egbert
 ```
 
 Second, run the development server:
