@@ -24,6 +24,9 @@ export default function ListHeader(props: ListHeaderProps) {
     <h2
       className={`text-white text-5xl uppercase font-thin rotate-90 opacity-0`}
       ref={headerRef}
+      style={{
+        textShadow: `2px 2px 0px #000000, 5px 4px 0px rgba(0,0,0,0.06)`,
+      }}
     >
       {text}
     </h2>

@@ -30,6 +30,9 @@ export default function Button(props: ButtonProps) {
       onClick={onClick}
       className={`${getSize()} rounded-lg border-2 border-cheese bg-greenDark text-white hover:bg-elecBlue hover:border-tangerine`}
       type={type ? type : "button"}
+      style={{
+        textShadow: `1px 1px 0px #000000, 5px 4px 0px rgba(0,0,0,0.02)`,
+      }}
     >
       {buttonText}
     </button>
