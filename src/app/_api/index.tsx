@@ -70,7 +70,14 @@ export async function getVideo(id: string): Promise<VideoReturn> {
 export async function getVideoComments(id: string): Promise<CommentReturn> {
   try {
     const res = await fetch(
-      `https://take-home-assessment-423502.uc.r.appspot.com/api/videos/comments?video_id=${id}`
+      `https://take-home-assessment-423502.uc.r.appspot.com/api/videos/comments?video_id=${id}`,
+      {
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "POST,PATCH,OPTIONS",
+        },
+      }
     );
     return res.json();
   } catch (error) {
