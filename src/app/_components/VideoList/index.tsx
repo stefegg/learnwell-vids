@@ -19,7 +19,14 @@ export default async function VideoList(props: VideoListProps) {
     <div
       className={`border-4 border-cheese rounded-lg flex flex-col grow bg-elecBlue text-white p-4`}
     >
-      <div className="text-lg mb-4">Click on any video to start learning!</div>
+      <div
+        className="text-lg mb-4"
+        style={{
+          textShadow: `1px 1px 0px #000000, 5px 4px 0px rgba(0,0,0,0.02)`,
+        }}
+      >
+        Click on any video to start learning!
+      </div>
       <div className="grid grid-cols-3 gap-4  w-full ">
         {filteredVideos.map((v, idx) => {
           return (
@@ -28,9 +35,28 @@ export default async function VideoList(props: VideoListProps) {
               href={`/watch/${v.id}`}
               className="border-tangerine border-4 w-full rounded-lg min-h-48 max-h-96 cursor-pointer flex flex-col bg-greenLight p-2 items-center gap-2 justify-evenly hover:text-cheese hover:bg-greenDark hover:scale-105 transition-all"
             >
-              <div className="text-xl">{v.title}</div>
-              <div className="overflow-y-auto text-sm">{v.description}</div>
-              <div className="flex flex-row text-sm gap-2">
+              <div
+                className="text-xl"
+                style={{
+                  textShadow: `1px 1px 0px #000000, 5px 4px 0px rgba(0,0,0,0.02)`,
+                }}
+              >
+                {v.title}
+              </div>
+              <div
+                className="overflow-y-auto text-sm"
+                style={{
+                  textShadow: `1px 1px 0px #000000, 5px 4px 0px rgba(0,0,0,0.02)`,
+                }}
+              >
+                {v.description}
+              </div>
+              <div
+                className="flex flex-row text-sm gap-2"
+                style={{
+                  textShadow: `1px 1px 0px #000000, 5px 4px 0px rgba(0,0,0,0.02)`,
+                }}
+              >
                 <div>{`Comments: ${v.num_comments}`}</div>
                 <div>{`Created At: ${format(
                   v.created_at,

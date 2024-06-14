@@ -8,7 +8,7 @@ import { format } from "date-fns";
 type VideoCommentProps = {
   id: string;
 };
-
+//Displays existing comments on a video
 export default function VideoComments(props: VideoCommentProps) {
   const { id } = props;
   const [comments, setComments] = useState<Comment[] | []>([]);
@@ -18,12 +18,19 @@ export default function VideoComments(props: VideoCommentProps) {
       const data = await getVideoComments(id);
       setComments(data.comments);
     };
-    fetchComments();
+    // fetchComments();
   });
 
   return (
     <div className="h-full w-full flex flex-col rounded-lg p-4 relative z-10 bg-elecBlue text-white">
-      <div className="text-2xl mb-2">Comments</div>
+      <div
+        className="text-2xl mb-2"
+        style={{
+          textShadow: `1px 1px 0px #000000, 5px 4px 0px rgba(0,0,0,0.02)`,
+        }}
+      >
+        Comments
+      </div>
       <div className="flex flex-col grow overflow-y-auto gap-4 mb-4">
         {comments.map((comment, idx) => (
           <div

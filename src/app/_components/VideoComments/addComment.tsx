@@ -12,7 +12,7 @@ type AddCommentProps = {
   setComments: Dispatch<SetStateAction<Comment[]>>;
   bottomRef: RefObject<HTMLDivElement>;
 };
-
+//Add comments slide in
 export default function AddComment(props: AddCommentProps) {
   const { id, comments, setComments, bottomRef } = props;
   const [showAdd, setShowAdd] = useState<boolean>(false);
@@ -24,13 +24,12 @@ export default function AddComment(props: AddCommentProps) {
   };
 
   const handleSubmit = async () => {
-    const resp = await postComment({
-      video_id: id,
-      content: formik.values.comment,
-      user_id: formik.values.userName,
-    });
+    // const resp = await postComment({
+    //   video_id: id,
+    //   content: formik.values.comment,
+    //   user_id: formik.values.userName,
+    // });
     setComments([
-      ...comments,
       {
         created_at: new Date(),
         content: formik.values.comment,
@@ -38,6 +37,7 @@ export default function AddComment(props: AddCommentProps) {
         video_id: id,
         id: id,
       },
+      ...comments,
     ]);
     setShowAdd(false);
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -65,7 +65,7 @@ export default function AddComment(props: AddCommentProps) {
       />
 
       <div
-        className={`flex flex-col grow absolute transition duration-1000 ${getTranslate()} z-20 bg-elecBlue h-[95%] w-full left-0 pb-8`}
+        className={`flex flex-col grow absolute transition duration-1000 ${getTranslate()} z-20 bg-elecBlue h-[95%] w-full left-0 pb-8 px-4`}
       >
         <form
           onSubmit={formik.handleSubmit}

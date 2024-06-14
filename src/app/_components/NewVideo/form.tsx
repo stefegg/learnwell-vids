@@ -38,7 +38,14 @@ export default function NewVideoForm(props: NewVideoFormProps) {
       onSubmit={formik.handleSubmit}
       className="w-full flex gap-4 flex-col items-center"
     >
-      <h2 className="text-4xl font-extralight">Add a New Video</h2>
+      <h2
+        className="text-4xl font-extralight"
+        style={{
+          textShadow: `1px 1px 0px #000000, 5px 4px 0px rgba(0,0,0,0.02)`,
+        }}
+      >
+        Add a New Video
+      </h2>
       <div className="flex flex-row gap-4 w-full">
         <Input
           width={"1/2"}
