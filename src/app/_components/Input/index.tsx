@@ -15,7 +15,14 @@ export default function Input(props: InputProps) {
   const { label, error, width, value, onChange, onBlur, name, type } = props;
   return (
     <div className={`flex flex-col w-${width} rounded-sm`}>
-      <span className="text-lg mb-1 font-extralight">{label && label}</span>
+      <span
+        className="text-lg mb-1 font-extralight"
+        style={{
+          textShadow: `1px 1px 0px #000000, 5px 4px 0px rgba(0,0,0,0.02)`,
+        }}
+      >
+        {label && label}
+      </span>
       <div className={`rounded w-full}`}>
         {type === "textArea" ? (
           <textarea

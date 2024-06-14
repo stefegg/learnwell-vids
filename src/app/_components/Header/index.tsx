@@ -9,10 +9,22 @@ export default function Header() {
         <Image src={logo} alt="logo" quality={100} unoptimized />
       </Link>
       <div className="sm:ml-auto gap-4 flex flex-row text-white text-sm sm:text-base md:text-lg font-thin">
-        <Link className="hover:text-cheese cursor-pointer" href="/watch">
+        <Link
+          className="hover:text-cheese cursor-pointer"
+          href="/watch"
+          style={{
+            textShadow: `1px 1px 0px #000000, 5px 4px 0px rgba(0,0,0,0.02)`,
+          }}
+        >
           Watch Videos
         </Link>
-        <Link className="hover:text-cheese cursor-pointer" href="/new">
+        <Link
+          className="hover:text-cheese cursor-pointer"
+          href="/new"
+          style={{
+            textShadow: `1px 1px 0px #000000, 5px 4px 0px rgba(0,0,0,0.02)`,
+          }}
+        >
           Add New Video
         </Link>
       </div>
