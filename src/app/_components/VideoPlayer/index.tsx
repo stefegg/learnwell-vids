@@ -22,13 +22,13 @@ export default async function VideoPlayer(props: VideoPlayerProps) {
     }
   };
   return (
-    <div className="h-full flex flex-col w-1/2">
+    <div className="h-full flex flex-col">
       <iframe
         src={fixUrl()}
         title={data.video.title}
         allowFullScreen
         height="400rem"
-        width="750rem"
+        width="100%"
       />
     </div>
   );

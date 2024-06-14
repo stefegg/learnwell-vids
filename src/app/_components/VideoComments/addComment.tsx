@@ -63,9 +63,8 @@ export default function AddComment(props: AddCommentProps) {
         size="med"
         onClick={() => setShowAdd(true)}
       />
-
       <div
-        className={`flex flex-col grow absolute transition duration-1000 ${getTranslate()} z-20 bg-elecBlue h-[95%] w-full left-0 pb-8 px-4`}
+        className={`flex flex-col absolute transition duration-1000 ${getTranslate()} z-20 bg-elecBlue right-6 pb-8 px-4`}
       >
         <form
           onSubmit={formik.handleSubmit}

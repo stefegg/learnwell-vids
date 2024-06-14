@@ -11,9 +11,11 @@ export default function WatchPage(props: WatchPageProps) {
   } = props;
 
   return (
-    <section className="h-[calc(100vh-6rem)] p-8 w-full flex flex-row">
+    <section className="h-[calc(100vh-6rem)] p-6 w-full flex flex-row gap-6">
       <Suspense fallback={<Loader />}>
-        <VideoPlayer id={id} />
+        <div className="w-2/3">
+          <VideoPlayer id={id} />
+        </div>
       </Suspense>
       <Suspense fallback={<Loader />}>
         <div className="ml-auto w-1/3 h-full flex flex-col gap-4">
