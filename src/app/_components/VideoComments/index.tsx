@@ -1,9 +1,11 @@
 "use client";
 import { getVideoComments } from "@/app/_api";
-import AddComment from "./addComment";
 import { useEffect, useState, useRef } from "react";
 import { Comment } from "@/app/_api";
 import { format } from "date-fns";
+import { useFormik } from "formik";
+import { newCommentSchema } from "./newCommentSchema";
+import { Input, Button } from "../index";
 
 type VideoCommentProps = {
   id: string;
@@ -21,8 +23,43 @@ export default function VideoComments(props: VideoCommentProps) {
     // fetchComments();
   });
 
+  const handleSubmit = async () => {
+    // const resp = await postComment({
+    //   video_id: id,
+    //   content: formik.values.comment,
+    //   user_id: formik.values.userName,
+    // });
+    setComments([
+      {
+        created_at: new Date(),
+        content: formik.values.comment,
+        user_id: formik.values.userName,
+        video_id: id,
+        id: id,
+      },
+      ...comments,
+    ]);
+    // setShowAdd(false);
+    // bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+    formik.setFieldValue("comment", "");
+    formik.setFieldTouched("comment", false);
+  };
+
+  const formik = useFormik({
+    initialValues: {
+      userName: "",
+      comment: "",
+    },
+    onSubmit: () => {
+      handleSubmit();
+    },
+    validateOnChange: true,
+    validateOnBlur: true,
+    validationSchema: newCommentSchema,
+  });
+
   return (
-    <div className="h-full w-full flex flex-col rounded-lg p-4 relative z-10 bg-elecBlue text-white">
+    <div className="h-full w-full flex flex-col rounded-lg p-4 bg-elecBlue text-white">
       <div
         className="text-2xl mb-2"
         style={{
@@ -31,11 +68,37 @@ export default function VideoComments(props: VideoCommentProps) {
       >
         Comments
       </div>
-      <div className="flex flex-col grow overflow-y-auto gap-4 mb-4">
+      <form onSubmit={formik.handleSubmit} className={`flex-col flex w-full `}>
+        <Input
+          label="User Name"
+          name="userName"
+          onChange={formik.handleChange("userName")}
+          onBlur={formik.handleChange("userName")}
+          value={formik.values.userName}
+          error={formik.touched.userName && formik.errors.userName}
+        />
+        <Input
+          label="Comment"
+          type="textArea"
+          name="comment"
+          onChange={formik.handleChange("comment")}
+          onBlur={formik.handleChange("comment")}
+          value={formik.values.comment}
+          error={formik.touched.comment && formik.errors.comment}
+        />
+        <div className="flex flex-row w-full justify-between mt-auto gap-2">
+          <Button
+            buttonText="Submit Comment"
+            size="sm"
+            onClick={formik.handleSubmit}
+          />
+        </div>
+      </form>
+      <div className="flex flex-col grow overflow-y-auto gap-4  mt-2 bg-greenDark">
         {comments.map((comment, idx) => (
           <div
             key={`${comment.user_id}-${idx}`}
-            className="h-24 border-2 border-tangerine flex flex-col px-4 py-1 rounded-lg  text-textDark justify-evenly bg-greenLight"
+            className="h-24 border-2 border-tangerine flex flex-col px-4 py-1 rounded-lg text-textDark justify-evenly bg-greenLight"
           >
             <div className="text-sm">{comment.user_id}</div>
             <div className="overflow-y-auto bg-white rounded-md pl-2 text-sm">
@@ -48,12 +111,6 @@ export default function VideoComments(props: VideoCommentProps) {
         ))}
         <div ref={bottomOfList} className={`h-0 w-0`} />
       </div>
-      <AddComment
-        id={id}
-        comments={comments}
-        setComments={setComments}
-        bottomRef={bottomOfList}
-      />
     </div>
   );
 }
