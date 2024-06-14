@@ -71,7 +71,14 @@ export async function getVideoComments(id: string): Promise<CommentReturn> {
   try {
     const res = await fetch(
       `https://take-home-assessment-423502.uc.r.appspot.com/api/videos/comments?video_id=${id}`,
-      { mode: "no-cors" }
+      {
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "https://learnwell-vids.vercel.app/",
+          "Access-Control-Allow-Headers": "Content-type, Authorization",
+          "Access-Control-Allow-Methods": "GET,POST,PATCH,OPTIONS",
+        },
+      }
     );
     return res.json();
   } catch (error) {
