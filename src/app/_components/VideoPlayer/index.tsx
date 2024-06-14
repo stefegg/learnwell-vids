@@ -30,6 +30,9 @@ export default async function VideoPlayer(props: VideoPlayerProps) {
         height="400rem"
         width="100%"
       />
+      <div className="w-full text-tangerine flex flex-row justify-center">
+        If videos are not loading, please disable your adblocker.
+      </div>
     </div>
   );
 }
